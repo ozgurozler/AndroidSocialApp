@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!--Ana Tablom-->
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!--ilk Bölüm-->
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!--ilk Bölümün Solu-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="5dp"
+                android:gravity="top|center_horizontal"
+                android:orientation="vertical">
+
+                <!--logo-->
+                <ImageView
+                    android:id="@+id/imageView"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:layout_gravity="center_horizontal"
+                    android:src="@drawable/logo" />
+
+                <!--kullanıcı ismi-->
+                <TextView
+                    android:id="@+id/textViewKullaniciAdi"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:padding="5dp"
+                    android:text="@string/kul_adi_string"
+                    android:textColor="@color/colorTabFrameTextNormal" />
+
+                <!--slogan-->
+                <TextView
+                    android:id="@+id/textViewSlogan"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:padding="5dp"
+                    android:text="@string/slogan_string"
+                    android:textColor="@color/colorTabFrameTextNormal" />
+
+                <!--web linki-->
+                <TextView
+                    android:id="@+id/textViewWebLink"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:padding="5dp"
+                    android:text="@string/web_link_string"
+                    android:textColor="@color/colorTabFrameTextNormal" />
+
+            </LinearLayout>
+
+            <!--ilk Bölümün Sağı-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="70"
+                android:gravity="top|center_horizontal"
+                android:orientation="vertical">
+
+                <!--sayı bilgilendirici yazılar-->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginTop="5dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/textView552378"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:text="New Text"
+                        android:textColor="@color/colorTabFrameTextNormal" />
+
+                    <TextView
+                        android:id="@+id/textView45"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:text="New Text"
+                        android:textColor="@color/colorTabFrameTextNormal" />
+
+                    <TextView
+                        android:id="@+id/textView557"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:text="New Text"
+                        android:textColor="@color/colorTabFrameTextNormal" />
+
+
+                </LinearLayout>
+
+
+                <!--takipet butonu-->
+                <Button
+                    android:id="@+id/button"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:padding="10dp"
+                    android:text="@string/takip_et_string" />
+
+            </LinearLayout>
+        </TableRow>
+    </TableLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/image_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal" />
+</LinearLayout>

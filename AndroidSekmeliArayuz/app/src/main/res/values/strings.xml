@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name_string">AndroidSekmeliArayuz</string>
+    <string name="action_settings_string">Settings</string>
+    <string name="kul_adi_string">nick</string>
+    <string name="takip_et_string">+ Takip Et</string>
+    <string name="slogan_string">Just do that</string>
+    <string name="web_link_string">www.just.com</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="title_activity_register">Register</string>
+</resources>
