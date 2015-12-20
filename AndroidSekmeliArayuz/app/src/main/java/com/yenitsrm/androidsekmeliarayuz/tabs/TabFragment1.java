@@ -10,7 +10,10 @@ import java.util.ArrayList;
 
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.GridLayoutManager;
+import android.widget.TextView;
 
+import com.com.javakaian.models.User;
+import com.yenitsrm.androidsekmeliarayuz.Factory;
 import com.yenitsrm.androidsekmeliarayuz.R;
 import com.yenitsrm.androidsekmeliarayuz.gallery.GalleryAdapter;
 import com.yenitsrm.androidsekmeliarayuz.gallery.ImageModel;
@@ -22,7 +25,7 @@ public class TabFragment1 extends Fragment {
 
     ArrayList<ImageModel> data = new ArrayList<>();
 
-
+    private TextView userNameTxt;
 
 
     //galeride gösterilecek rerimlerin url dizisi
@@ -45,6 +48,11 @@ public class TabFragment1 extends Fragment {
 
         View view = inflater.inflate(R.layout.tab_fragment_1, container, false);
 
+        //login olan kullanıcıyı alıp
+        //bilgilerini ilgili textviewlere yazdırıyoruz
+        User user = Factory.getUser();
+        userNameTxt = (TextView) view.findViewById(R.id.textViewKullaniciAdi);
+        userNameTxt.setText(user.getUserName());
 
         //url'lerden resimlerimizi üretiyoruz
         for (int i = 0; i < IMGS.length; i++) {
@@ -65,4 +73,5 @@ public class TabFragment1 extends Fragment {
 
         return view;
     }
+
 }

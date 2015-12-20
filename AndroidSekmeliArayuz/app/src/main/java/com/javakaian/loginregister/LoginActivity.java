@@ -11,6 +11,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.javakaian.json.JsonParser;
+import com.yenitsrm.androidsekmeliarayuz.Factory;
 import com.yenitsrm.androidsekmeliarayuz.MainActivity;
 import com.yenitsrm.androidsekmeliarayuz.R;
 
@@ -132,11 +133,19 @@ public class LoginActivity extends Activity
                 if(jsonObject.getInt("success")==1)
                 {
 
+                    //giriş yapan kullanıcımı oluşturuyorum
+                    Factory.initLoginUser(jsonObject.getString(tag_Name),
+                            jsonObject.getString(tag_Username),
+                            jsonObject.getString(tag_Email),
+                            Integer.valueOf(jsonObject.getString(tag_Age)));
+
+
+                    //burası gereksiz olabilir incelenecek!
                     Intent i = new Intent(LoginActivity.this,MainActivity.class);
-                    i.putExtra(tag_Name, jsonObject.getString(tag_Name));
-                    i.putExtra(tag_Username, jsonObject.getString(tag_Username));
-                    i.putExtra(tag_Email, jsonObject.getString(tag_Email));
-                    i.putExtra(tag_Age, jsonObject.getString(tag_Age));
+//                    i.putExtra(tag_Name, jsonObject.getString(tag_Name));
+//                    i.putExtra(tag_Username, jsonObject.getString(tag_Username));
+//                    i.putExtra(tag_Email, jsonObject.getString(tag_Email));
+//                    i.putExtra(tag_Age, jsonObject.getString(tag_Age));
                     startActivity(i);
                 }
 

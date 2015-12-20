@@ -1,6 +1,6 @@
 package com.yenitsrm.androidsekmeliarayuz;
 
-import android.content.Intent;
+
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -12,26 +12,14 @@ import android.view.MenuItem;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 
-import com.com.javakaian.models.User;
 import com.yenitsrm.androidsekmeliarayuz.tabs.PagerAdapter;
 
 public class MainActivity extends AppCompatActivity{
-
-    private User user;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        /////////////7
-        Intent i =getIntent();
-        user = new User(i.getStringExtra("name"),
-                        i.getStringExtra("username"),
-                        i.getStringExtra("email"),
-                        Integer.valueOf(i.getStringExtra("age")));
-        /////////////
-
 
         //araç çubuğumuz
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -102,10 +90,6 @@ public class MainActivity extends AppCompatActivity{
         }
 
         return super.onOptionsItemSelected(item);
-    }
-
-    public User getUser() {
-        return user;
     }
 
 }
