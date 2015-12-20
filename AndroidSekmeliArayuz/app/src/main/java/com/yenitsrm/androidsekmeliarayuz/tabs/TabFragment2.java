@@ -1,4 +1,4 @@
-package com.yenitsrm.androidsekmeliarayuz;
+package com.yenitsrm.androidsekmeliarayuz.tabs;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -10,6 +10,10 @@ import java.util.ArrayList;
 
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.GridLayoutManager;
+
+import com.yenitsrm.androidsekmeliarayuz.R;
+import com.yenitsrm.androidsekmeliarayuz.gallery.GalleryAdapter;
+import com.yenitsrm.androidsekmeliarayuz.gallery.ImageModel;
 
 public class TabFragment2 extends Fragment {
 

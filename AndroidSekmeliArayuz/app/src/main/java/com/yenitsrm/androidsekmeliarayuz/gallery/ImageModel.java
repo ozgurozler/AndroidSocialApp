@@ -1,4 +1,4 @@
-package com.yenitsrm.androidsekmeliarayuz;
+package com.yenitsrm.androidsekmeliarayuz.gallery;
 
 import android.os.Parcel;
 import android.os.Parcelable;

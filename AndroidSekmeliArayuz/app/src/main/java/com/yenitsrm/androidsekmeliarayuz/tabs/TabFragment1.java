@@ -1,6 +1,5 @@
-package com.yenitsrm.androidsekmeliarayuz;
+package com.yenitsrm.androidsekmeliarayuz.tabs;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -11,10 +10,13 @@ import java.util.ArrayList;
 
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.GridLayoutManager;
-import android.widget.EditText;
 import android.widget.TextView;
 
 import com.com.javakaian.models.User;
+import com.yenitsrm.androidsekmeliarayuz.Factory;
+import com.yenitsrm.androidsekmeliarayuz.R;
+import com.yenitsrm.androidsekmeliarayuz.gallery.GalleryAdapter;
+import com.yenitsrm.androidsekmeliarayuz.gallery.ImageModel;
 
 public class TabFragment1 extends Fragment {
 
@@ -23,9 +25,10 @@ public class TabFragment1 extends Fragment {
 
     ArrayList<ImageModel> data = new ArrayList<>();
 
+    private TextView userNameTxt;
 
 
-
+    //galeride gösterilecek rerimlerin url dizisi
     public static String IMGS[] = {
 
             "https://images.unsplash.com/photo-1444090542259-0af8fa96557e?q=80&fm=jpg&w=1080&fit=max&s=4b703b77b42e067f949d14581f35019b",
@@ -45,6 +48,13 @@ public class TabFragment1 extends Fragment {
 
         View view = inflater.inflate(R.layout.tab_fragment_1, container, false);
 
+        //login olan kullanıcıyı alıp
+        //bilgilerini ilgili textviewlere yazdırıyoruz
+        User user = Factory.getUser();
+        userNameTxt = (TextView) view.findViewById(R.id.textViewKullaniciAdi);
+        userNameTxt.setText(user.getUserName());
+
+        //url'lerden resimlerimizi üretiyoruz
         for (int i = 0; i < IMGS.length; i++) {
 
             ImageModel imageModel = new ImageModel();
@@ -54,6 +64,7 @@ public class TabFragment1 extends Fragment {
 
         }
 
+        //resimler galeri şeklinde görüntüleniyor
         mRecyclerView = (RecyclerView) view.findViewById(R.id.image_list);
         mRecyclerView.setLayoutManager(new GridLayoutManager(getActivity().getBaseContext(), 3));
         mRecyclerView.setHasFixedSize(true); // Helps improve performance
