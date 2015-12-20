@@ -13,8 +13,9 @@ import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 
 import com.com.javakaian.models.User;
+import com.yenitsrm.androidsekmeliarayuz.tabs.PagerAdapter;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity{
 
     private User user;
 
@@ -32,21 +33,11 @@ public class MainActivity extends AppCompatActivity {
         /////////////
 
 
-
+        //araç çubuğumuz
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(
-                new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
-
-
+        //sekmeleri ekliyoruz
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tab_layout);
         tabLayout.addTab(tabLayout.newTab().setText("PROFILE"));
         tabLayout.addTab(tabLayout.newTab().setText("REQUESTS"));
@@ -54,9 +45,10 @@ public class MainActivity extends AppCompatActivity {
         tabLayout.addTab(tabLayout.newTab().setText("WALL"));
         tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
 
+        //sekmeleri görüntüleyebilmemizi ve
+        // değiştirebilmemizi sağlayan sistem
         final ViewPager viewPager = (ViewPager) findViewById(R.id.pager);
-        final PagerAdapter adapter = new PagerAdapter
-                (getSupportFragmentManager(), tabLayout.getTabCount());
+        final PagerAdapter adapter = new PagerAdapter(getSupportFragmentManager(), tabLayout.getTabCount());
         viewPager.setAdapter(adapter);
         viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
         tabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
@@ -75,6 +67,19 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+
+
+        //fab düğmesi
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        fab.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                                .setAction("Action", null).show();
+                    }
+                });
+
     }
 
     @Override
@@ -102,4 +107,5 @@ public class MainActivity extends AppCompatActivity {
     public User getUser() {
         return user;
     }
+
 }

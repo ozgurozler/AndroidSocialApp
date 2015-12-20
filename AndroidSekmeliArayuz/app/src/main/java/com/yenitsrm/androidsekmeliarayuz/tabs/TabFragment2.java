@@ -1,6 +1,5 @@
-package com.yenitsrm.androidsekmeliarayuz;
+package com.yenitsrm.androidsekmeliarayuz.tabs;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -11,20 +10,17 @@ import java.util.ArrayList;
 
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.GridLayoutManager;
-import android.widget.EditText;
-import android.widget.TextView;
 
-import com.com.javakaian.models.User;
+import com.yenitsrm.androidsekmeliarayuz.R;
+import com.yenitsrm.androidsekmeliarayuz.gallery.GalleryAdapter;
+import com.yenitsrm.androidsekmeliarayuz.gallery.ImageModel;
 
-public class TabFragment1 extends Fragment {
+public class TabFragment2 extends Fragment {
 
     GalleryAdapter mAdapter;
     RecyclerView mRecyclerView;
 
     ArrayList<ImageModel> data = new ArrayList<>();
-
-
-
 
     public static String IMGS[] = {
 
@@ -42,8 +38,7 @@ public class TabFragment1 extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
-
-        View view = inflater.inflate(R.layout.tab_fragment_1, container, false);
+        View view = inflater.inflate(R.layout.tab_fragment_2, container, false);
 
         for (int i = 0; i < IMGS.length; i++) {
 
@@ -51,10 +46,9 @@ public class TabFragment1 extends Fragment {
             imageModel.setName("Image " + i);
             imageModel.setUrl(IMGS[i]);
             data.add(imageModel);
-
         }
 
-        mRecyclerView = (RecyclerView) view.findViewById(R.id.image_list);
+        mRecyclerView = (RecyclerView) view.findViewById(R.id.image_list_2);
         mRecyclerView.setLayoutManager(new GridLayoutManager(getActivity().getBaseContext(), 3));
         mRecyclerView.setHasFixedSize(true); // Helps improve performance
         mAdapter = new GalleryAdapter(getActivity().getBaseContext(), data);

@@ -1,4 +1,4 @@
-package com.yenitsrm.androidsekmeliarayuz;
+package com.yenitsrm.androidsekmeliarayuz.gallery;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
@@ -9,6 +9,7 @@ import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
+import com.yenitsrm.androidsekmeliarayuz.R;
 
 import java.util.ArrayList;
 import java.util.List;
